@@ -621,7 +621,7 @@ class BuildTool
          if (threadPool==null)
          {
             for(file in to_be_compiled)
-               mCompiler.compile(file,-1,groupHeader,pchStamp);
+               mCompiler.compile(file,-1,groupHeader,pchStamp, compile_progress);
          }
          else
          {
@@ -637,7 +637,7 @@ class BuildTool
                         break;
                      var file = to_be_compiled[index];
 
-                     compiler.compile(file,threadId,groupHeader,pchStamp);
+                     compiler.compile(file,threadId,groupHeader,pchStamp, compile_progress);
                   }
             });
          }
