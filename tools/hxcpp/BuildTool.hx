@@ -614,6 +614,10 @@ class BuildTool
          } : null;
 
          Profile.push("compile");
+         var compile_progress = null;
+         if (!Log.verbose)
+            compile_progress = new Progress(0,to_be_compiled.length);
+         
          if (threadPool==null)
          {
             for(file in to_be_compiled)
